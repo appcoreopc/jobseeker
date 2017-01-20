@@ -4,12 +4,14 @@ import { MyApp } from './app.component';
 import { JobPage } from '../pages/Job/JobPage';
 import { Page2 } from '../pages/page2/page2';
 import { FeedPage } from '../pages/Job/FeedPage';
+import { JobAppliedPage } from '../pages/Job/JobAppliedPage';
+import { JobDetailPage } from '../pages/Job/JobDetailPage';
+
 
 @NgModule({
   declarations: [
     MyApp,
-    JobPage, FeedPage,
-    Page2
+    JobPage, FeedPage, JobAppliedPage, JobDetailPage, Page2
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -17,7 +19,7 @@ import { FeedPage } from '../pages/Job/FeedPage';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    JobPage, FeedPage,  
+    JobPage, FeedPage, JobAppliedPage, JobDetailPage,
     Page2
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]

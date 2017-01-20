@@ -3,23 +3,23 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Job Feed</ion-title>
+    <ion-title>Job Applied</ion-title>
   </ion-navbar>
 </ion-header>
 
-
 <ion-content padding>
-  <ion-card *ngFor="let item of data"> 
+
+  <ion-card>
+
     <ion-item>
       <ion-avatar item-left>
-        <img src="{{imageUrl}}">
+        <img src="img/marty-avatar.png">
       </ion-avatar>
-      <h2 (click)='loadDetail(item)'>{{item.title}}</h2>
-      <p (click)='loadDetail(item)'>{{item.description}}</p>
+      <h2>Job Applied</h2>
+      <p>November 5, 1955</p>
     </ion-item>
     <ion-card-content>
-      <p (click)='loadDetail(item)'>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?!
-        Whoa. This is heavy.</p>
+      <p>Awaiting feedback from employer.</p>
     </ion-card-content>
 
     <ion-row>
