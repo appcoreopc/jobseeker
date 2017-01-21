@@ -22,6 +22,6 @@ import { JobDetailPage } from '../pages/Job/JobDetailPage';
     JobPage, FeedPage, JobAppliedPage, JobDetailPage,
     Page2
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [{ provide: ErrorHandler, useClass: IonicErrorHandler }]
 })
-export class AppModule {}
+export class AppModule { }

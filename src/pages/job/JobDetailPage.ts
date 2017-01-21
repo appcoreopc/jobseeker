@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 
 @Component({
   selector: 'page-page1',
@@ -7,6 +7,6 @@ import { NavController } from 'ionic-angular';
 })
 
 export class JobDetailPage {
-  constructor(public navCtrl: NavController, ) {
+  constructor(public navCtrl: NavController, private navParams: NavParams) {
   }
 }
