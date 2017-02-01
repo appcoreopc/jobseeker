@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { JobDetailPage } from './JobDetailPage'
+import { JobFeedService } from "../../providers/job-feed-service"
 
 @Component({
   selector: 'page-page1',
-  templateUrl: 'feedPage.html'
+  templateUrl: 'feedPage.html',
+  providers: [JobFeedService]
 })
-export class FeedPage {
 
+export class FeedPage {
   data: any = [
     {
       title: 'test1',
@@ -29,11 +31,14 @@ export class FeedPage {
     }
   ];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private feedService: JobFeedService) {
+    feedService.getFeed().then(data => {
+      console.log(data);
+      this.data = data;
+    });
   }
 
   loadDetail(item) {
     this.navCtrl.push(JobDetailPage, item)
   }
-
 }

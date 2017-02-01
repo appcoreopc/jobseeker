@@ -8,8 +8,9 @@
 </ion-header>
 
 
+
 <ion-content padding>
-  <ion-card *ngFor="let item of data"> 
+  <ion-card *ngFor="let item of data">
     <ion-item>
       <ion-avatar item-left>
         <img src="{{imageUrl}}">
@@ -18,8 +19,7 @@
       <p (click)='loadDetail(item)'>{{item.description}}</p>
     </ion-item>
     <ion-card-content>
-      <p (click)='loadDetail(item)'>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?!
-        Whoa. This is heavy.</p>
+      <p (click)='loadDetail(item)'>{{item.details}}.</p>
     </ion-card-content>
 
     <ion-row>
