@@ -10,16 +10,19 @@
 <ion-content padding>
   <ion-grid>
     <ion-row>
-      <ion-col text-center>
+      <ion-col>
         <ion-avatar>
-            <img src="https://www.google.co.nz/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png">
+          <img class="companyAvatar" src="{{item.images}}">
         </ion-avatar>
+
       </ion-col>
     </ion-row>
 
     <ion-row class="whiteBackground">
       <ion-col text-center>
-        Content here
+        <h2>{{item.title}}</h2>
+        <p>{{item.description}}</p>
+        <p> {{item.details}} </p>
       </ion-col>
     </ion-row>
 
