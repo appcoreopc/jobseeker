@@ -1,5 +1,6 @@
-page-page1 {
-    ion-grid {
+page-profile {
+
+      ion-grid {
         padding: 0;
         height: 100%;
         background-color: #0BDC80;
@@ -8,7 +9,9 @@ page-page1 {
     ion-row {
         flex: 1;
     }
+
 }
+
 
 ion-app.md [padding], ion-app.md [padding] .scroll-content {
     padding: 0px;

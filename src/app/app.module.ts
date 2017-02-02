@@ -6,12 +6,13 @@ import { Page2 } from '../pages/page2/page2';
 import { FeedPage } from '../pages/Job/FeedPage';
 import { JobAppliedPage } from '../pages/Job/JobAppliedPage';
 import { JobDetailPage } from '../pages/Job/JobDetailPage';
-
+import { ProfilePage } from '../pages/profile/profile';
+import { SettingsPage } from '../pages/settings/settings';
 
 @NgModule({
   declarations: [
     MyApp,
-    JobPage, FeedPage, JobAppliedPage, JobDetailPage, Page2
+    JobPage, FeedPage, JobAppliedPage, JobDetailPage, Page2, ProfilePage, SettingsPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -20,7 +21,7 @@ import { JobDetailPage } from '../pages/Job/JobDetailPage';
   entryComponents: [
     MyApp,
     JobPage, FeedPage, JobAppliedPage, JobDetailPage,
-    Page2
+    Page2, ProfilePage, SettingsPage
   ],
   providers: [{ provide: ErrorHandler, useClass: IonicErrorHandler }]
 })
