@@ -33,7 +33,6 @@ export class FeedPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private feedService: JobFeedService) {
     feedService.getFeed().then(data => {
-      console.log(data);
       this.data = data;
     });
   }

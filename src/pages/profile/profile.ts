@@ -1,22 +1,20 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { ProfileService } from '../../providers/profile-service';
 
-/*
-  Generated class for the Profile page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-profile',
-  templateUrl: 'profile.html'
+  templateUrl: 'profile.html',
+  providers: [ProfileService]
 })
 export class ProfilePage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ProfilePage');
+  data: any;
+  constructor(public navCtrl: NavController, public navParams: NavParams, private profileService: ProfileService) {
+    this.profileService.getFeed().then(data => {
+     this.data = data;
+    });
   }
 
+  ionViewDidLoad() {
+  }
 }

@@ -1,22 +1,19 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { SettingService } from '../../providers/setting-service'
 
-/*
-  Generated class for the Settings page.
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-settings',
-  templateUrl: 'settings.html'
+  templateUrl: 'settings.html',
+  providers: [SettingService]
 })
 export class SettingsPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad SettingsPage');
+  data: any;
+  constructor(public navCtrl: NavController, public navParams: NavParams, private settingService: SettingService) {
+    this.settingService.getFeed().then(data => {
+      this.data = data;
+      console.log(this.data);
+    });
   }
-
 }

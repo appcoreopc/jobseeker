@@ -3,16 +3,17 @@ import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 
 @Injectable()
-export class JobFeedService {
+export class SettingService {
+
   _http: Http
   _data: any;
-  _apiUrl: string = "http://104.197.151.41/blog/public/api/job/feed";
+  _apiUrl: string = "http://104.197.151.41/blog/public/api/settings";
   _url: string;
 
   constructor(public http: Http) {
     this._http = http;
   }
-
+  
   getFeed() {
     if (this._data) {
       return Promise.resolve(this._data);
@@ -24,8 +25,8 @@ export class JobFeedService {
       this._http.get(this._url).map(
         x => x.json()).subscribe(
         data => {
-          this._data = data.feed;
-          
+          this._data = data.settings;
+          console.log(this._data);
           resolve(this._data);
         })
     });
