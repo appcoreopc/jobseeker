@@ -25,8 +25,7 @@ export class ProfileService {
       this._http.get(this._url).map(
         x => x.json()).subscribe(
         data => {
-          this._data = data.profile;
-          console.log(this._data);
+          this._data = data.profile[0];
           resolve(this._data);
         })
     });

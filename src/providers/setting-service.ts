@@ -13,7 +13,7 @@ export class SettingService {
   constructor(public http: Http) {
     this._http = http;
   }
-  
+
   getFeed() {
     if (this._data) {
       return Promise.resolve(this._data);
@@ -25,8 +25,7 @@ export class SettingService {
       this._http.get(this._url).map(
         x => x.json()).subscribe(
         data => {
-          this._data = data.settings;
-          console.log(this._data);
+          this._data = data.settings[0];
           resolve(this._data);
         })
     });

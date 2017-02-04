@@ -8,11 +8,15 @@ import { ProfileService } from '../../providers/profile-service';
   providers: [ProfileService]
 })
 export class ProfilePage {
-  data: any;
+  
+  public data: any;
+  image : string = "";
+
   constructor(public navCtrl: NavController, public navParams: NavParams, private profileService: ProfileService) {
     this.profileService.getFeed().then(data => {
-     this.data = data;
-    });
+       this.data = data;
+       this.image = data.image;
+     });
   }
 
   ionViewDidLoad() {
