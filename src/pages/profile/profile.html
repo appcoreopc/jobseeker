@@ -1,10 +1,15 @@
 <ion-header>
   <ion-navbar>
     <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>Profile</ion-title>
   </ion-navbar>
 </ion-header>
+
+
+
+
 
 <ion-content padding>
   <ion-grid>
@@ -18,8 +23,8 @@
 
     <ion-row class="whiteBackground"> 
       <ion-col text-center>
-        <h2>{{data?.title}}</h2>
-        <p>Name    : {{data?.name}}</p>
+        
+        <p>Name    : {{data?.title}} {{data?.name}}</p>
         <p>Contact : {{data?.phone}}</p>
         <p>Address :{{data?.address}}</p>
       </ion-col>
