@@ -14,7 +14,7 @@ export class SettingService {
     this._http = http;
   }
 
-  getFeed() {
+  getSettings() {
     if (this._data) {
       return Promise.resolve(this._data);
     }

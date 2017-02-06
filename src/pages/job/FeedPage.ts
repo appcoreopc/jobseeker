@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, LoadingController } from 'ionic-angular';
 import { JobDetailPage } from './JobDetailPage'
 import { JobFeedService } from "../../providers/job-feed-service"
 
@@ -31,9 +31,13 @@ export class FeedPage {
     }
   ];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private feedService: JobFeedService) {
-    feedService.getFeed().then(data => {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private feedService: JobFeedService, private loader: LoadingController) {
+    
+    let loadingUI = this.loader.create({ content: 'Please wait ...' });
+    loadingUI.present();
+    this.feedService.getFeed().then(data => {
       this.data = data;
+      loadingUI.dismiss();
     });
   }
 

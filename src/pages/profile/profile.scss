@@ -9,7 +9,6 @@ page-profile {
     ion-row {
         flex: 1;
     }
-
 }
 
 ion-app.md [padding], ion-app.md [padding] .scroll-content {
@@ -32,3 +31,6 @@ p {
     text-align:  left;
 }
 
+ion-col p { 
+    padding-left: 10px;
+}

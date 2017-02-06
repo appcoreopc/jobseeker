@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, LoadingController } from 'ionic-angular';
 import { ProfileService } from '../../providers/profile-service';
 
 @Component({
@@ -8,15 +8,18 @@ import { ProfileService } from '../../providers/profile-service';
   providers: [ProfileService]
 })
 export class ProfilePage {
-  
-  public data: any;
-  image : string = "";
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private profileService: ProfileService) {
+  public data: any;
+  image: string = "";
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private profileService: ProfileService, private loader: LoadingController) {
+    
+    let loadingUI = this.loader.create({ content: 'Please wait ....' });
+    loadingUI.present();
     this.profileService.getFeed().then(data => {
-       this.data = data;
-       this.image = data.image;
-     });
+      this.data = data;
+      loadingUI.dismiss();
+    });
   }
 
   ionViewDidLoad() {

@@ -25,8 +25,6 @@ export class MyApp {
       { title: 'Home', component: JobPage },
       { title: 'My Profile', component: ProfilePage },
       { title: 'Messages', component: JobPage },
-      { title: 'Subscriptions', component: Page2 },
-      { title: 'Notification', component: Page2 },
       { title: 'Settings', component: SettingsPage }
     ];
 
