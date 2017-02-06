@@ -8,6 +8,26 @@ import { JobAppliedPage } from '../pages/Job/JobAppliedPage';
 import { JobDetailPage } from '../pages/Job/JobDetailPage';
 import { ProfilePage } from '../pages/profile/profile';
 import { SettingsPage } from '../pages/settings/settings';
+import { CloudSettings, CloudModule } from '@ionic/cloud-angular';
+
+const cloudSettings: CloudSettings = {
+  'core': {
+    'app_id': '2b1579f7'
+  },
+  'push': {
+    'sender_id': '242381528282',
+    'pluginConfig': {
+      'ios': {
+        'badge': true,
+        'sound': true
+      },
+      'android': {
+        'sound': true,
+        'iconColor': '#343434'
+      }
+    }
+  }
+};
 
 @NgModule({
   declarations: [
@@ -15,7 +35,8 @@ import { SettingsPage } from '../pages/settings/settings';
     JobPage, FeedPage, JobAppliedPage, JobDetailPage, Page2, ProfilePage, SettingsPage
   ],
   imports: [
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    CloudModule.forRoot(cloudSettings)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
