@@ -15,19 +15,18 @@ export class MyApp {
 
   rootPage: any = JobPage;
 
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{title: string, component: any, icon : string}>;
 
   constructor(public platform: Platform) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: JobPage },
-      { title: 'My Profile', component: ProfilePage },
-      { title: 'Messages', component: JobPage },
-      { title: 'Settings', component: SettingsPage }
+      { title: 'Home', component: JobPage, icon : 'md-home' },
+      { title: 'My Profile', component: ProfilePage, icon : 'md-person' },
+      { title: 'Messages', component: JobPage, icon : 'md-mail' },
+      { title: 'Settings', component: SettingsPage, icon : 'md-options' }
     ];
-
   }
 
   initializeApp() {
@@ -36,6 +35,8 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       StatusBar.styleDefault();
       Splashscreen.hide();
+
+
     });
   }
 
