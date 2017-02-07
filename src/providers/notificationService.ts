@@ -1,4 +1,4 @@
-import { Push, PushToken, Deploy } from '@ionic/cloud-angular';
+import { Push, PushToken} from '@ionic/cloud-angular';
 import { Platform } from 'ionic-angular';
 
 export class NotificationService {

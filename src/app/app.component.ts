@@ -6,6 +6,8 @@ import { JobPage } from '../pages/Job/JobPage';
 import { Page2 } from '../pages/page2/page2';
 import { ProfilePage } from '../pages/profile/profile';
 import { SettingsPage } from '../pages/settings/settings';
+import { Push, PushToken } from '@ionic/cloud-angular';
+import { NotificationService } from '../providers/notificationService';
 
 @Component({
   templateUrl: 'app.html'
@@ -17,7 +19,7 @@ export class MyApp {
 
   pages: Array<{title: string, component: any, icon : string}>;
 
-  constructor(public platform: Platform) {
+  constructor(public platform: Platform, private push : Push) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
@@ -26,7 +28,7 @@ export class MyApp {
       { title: 'My Profile', component: ProfilePage, icon : 'md-person' },
       { title: 'Messages', component: JobPage, icon : 'md-mail' },
       { title: 'Settings', component: SettingsPage, icon : 'md-options' }
-    ];
+    ];  
   }
 
   initializeApp() {
@@ -36,7 +38,7 @@ export class MyApp {
       StatusBar.styleDefault();
       Splashscreen.hide();
 
-
+      new NotificationService(this.platform, this.push).registerPushNotification();
     });
   }
 
