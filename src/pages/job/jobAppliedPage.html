@@ -7,11 +7,12 @@
   </ion-navbar>
 </ion-header>
 
+
 <ion-content padding>
   <ion-card *ngFor="let item of data">
     <ion-item>
       <ion-avatar item-left>
-        <img src="{{item.images}}">
+        <img src="{{item?.images}}">
       </ion-avatar>
       <h2 (click)='loadDetail(item)'>{{item?.title}}</h2>
       <p (click)='loadDetail(item)'>{{item?.description}}</p>

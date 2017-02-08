@@ -36,7 +36,7 @@ export class FeedPage {
     let loadingUI = this.loader.create({ content: 'Please wait ...' });
     loadingUI.present();
     this.feedService.getFeed().then(data => {
-      this.data = data;
+      this.data = data.feed;
       loadingUI.dismiss();
     });
   }

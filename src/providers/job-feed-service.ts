@@ -24,8 +24,7 @@ export class JobFeedService {
       this._http.get(this._url).map(
         x => x.json()).subscribe(
         data => {
-          this._data = data.feed;
-          
+          this._data = data;
           resolve(this._data);
         })
     });

@@ -5,7 +5,8 @@ import { JobAppliedPage } from './JobAppliedPage'
 
 @Component({
   selector: 'page-page1',
-  templateUrl: 'jobPage.html'
+  templateUrl: 'jobPage.html', 
+  
 })
 export class JobPage {
 
