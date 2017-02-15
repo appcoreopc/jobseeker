@@ -8,6 +8,7 @@ import { ProfilePage } from '../pages/profile/profile';
 import { SettingsPage } from '../pages/settings/settings';
 import { Push, PushToken } from '@ionic/cloud-angular';
 import { NotificationService } from '../providers/notificationService';
+import { AppointmentPage } from '../pages/Job/appointmentPage';
 
 @Component({
   templateUrl: 'app.html'
@@ -17,18 +18,19 @@ export class MyApp {
 
   rootPage: any = JobPage;
 
-  pages: Array<{title: string, component: any, icon : string}>;
+  pages: Array<{ title: string, component: any, icon: string }>;
 
-  constructor(public platform: Platform, private push : Push) {
+  constructor(public platform: Platform, private push: Push) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: JobPage, icon : 'md-home' },
-      { title: 'My Profile', component: ProfilePage, icon : 'md-person' },
-      { title: 'Messages', component: JobPage, icon : 'md-mail' },
-      { title: 'Settings', component: SettingsPage, icon : 'md-options' }
-    ];  
+      { title: 'Home', component: JobPage, icon: 'md-home' },
+      { title: 'My Profile', component: ProfilePage, icon: 'md-person' },
+      { title: 'Messages', component: JobPage, icon: 'md-mail' },
+      { title: 'Appointment', component: AppointmentPage, icon: 'md-calendar' },
+      { title: 'Settings', component: SettingsPage, icon: 'md-options' }
+    ];
   }
 
   initializeApp() {

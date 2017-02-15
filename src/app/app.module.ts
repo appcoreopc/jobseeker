@@ -9,6 +9,10 @@ import { JobDetailPage } from '../pages/Job/JobDetailPage';
 import { ProfilePage } from '../pages/profile/profile';
 import { SettingsPage } from '../pages/settings/settings';
 import { CloudSettings, CloudModule } from '@ionic/cloud-angular';
+import { AppointmentPage } from '../pages/Job/appointmentPage';
+import { JobFilterPage } from '../pages/Job/jobFilterPage';
+
+
 
 const cloudSettings: CloudSettings = {
   'core': {
@@ -32,7 +36,7 @@ const cloudSettings: CloudSettings = {
 @NgModule({
   declarations: [
     MyApp,
-    JobPage, FeedPage, JobAppliedPage, JobDetailPage, Page2, ProfilePage, SettingsPage
+    JobPage, FeedPage, JobAppliedPage, JobDetailPage, Page2, ProfilePage, SettingsPage, AppointmentPage, JobFilterPage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -41,8 +45,8 @@ const cloudSettings: CloudSettings = {
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    JobPage, FeedPage, JobAppliedPage, JobDetailPage,
-    Page2, ProfilePage, SettingsPage
+    JobPage, FeedPage, JobAppliedPage, JobDetailPage, JobFilterPage,
+    Page2, ProfilePage, SettingsPage, AppointmentPage
   ],
   providers: [{ provide: ErrorHandler, useClass: IonicErrorHandler }]
 })

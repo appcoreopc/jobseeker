@@ -18,6 +18,7 @@
     </ion-item>
     <ion-card-content>
       <p (click)='loadDetail(item)'>{{item?.details}}.</p>
+      <p> {{item?.location}} </p>
     </ion-card-content>
 
     <ion-row>
@@ -29,10 +30,16 @@
       </ion-col>
       <ion-col>
         <button ion-button icon-left clear small>
-        <ion-icon name="md-pin"></ion-icon>
-        <div>{{item?.location}}</div>
+        <ion-icon name="md-mail"></ion-icon>
+        <div>Email Friend</div>
       </button>
       </ion-col>
+
+
+
+
+
+
       <ion-col center text-center>
         <ion-note>
           11h ago
@@ -42,5 +49,9 @@
 
   </ion-card>
 
+
+  <ion-fab right bottom>
+    <button (click)="filter()" ion-fab color="light"><ion-icon name="md-list"></ion-icon></button>
+  </ion-fab>
 
 </ion-content>

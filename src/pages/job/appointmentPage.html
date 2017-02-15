@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Appointments</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <h1>
+      <ion-icon name="md-calendar"></ion-icon> {{monthString}}, {{dayString}} </h1>
+  </ion-item>
+
+  <ion-card *ngFor="let item of data">
+    <ion-item>
+      <ion-avatar item-left>
+        <img src="{{item.images}}">
+      </ion-avatar>
+      <h2 (click)='loadDetail(item)'>{{item?.name}} for {{item?.positionFor}}</h2>
+      <ion-note class="note note-md">
+        {{item?.title}}
+      </ion-note>
+      <ion-note class="note note-md">
+        Skills : {{item?.skill}}</ion-note>
+      <p>
+        <ion-icon name="md-pin"></ion-icon>{{item?.location}}</p>
+    </ion-item>
+    <ion-card-content>
+
+      <p (click)='loadDetail(item)'>{{item?.experience}}.</p>
+
+    </ion-card-content>
+    <ion-row>
+      <ion-col>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+</ion-content>

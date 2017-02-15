@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, LoadingController } from 'ionic-angular';
-import { JobDetailPage } from './JobDetailPage'
-import { JobFeedService } from "../../providers/job-feed-service"
+import { JobDetailPage } from './JobDetailPage';
+import { JobFeedService } from "../../providers/job-feed-service";
+import { JobFilterPage } from './jobFilterPage';
 
 @Component({
   selector: 'page-page1',
@@ -32,7 +33,7 @@ export class FeedPage {
   ];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private feedService: JobFeedService, private loader: LoadingController) {
-    
+
     let loadingUI = this.loader.create({ content: 'Please wait ...' });
     loadingUI.present();
     this.feedService.getFeed().then(data => {
@@ -43,5 +44,9 @@ export class FeedPage {
 
   loadDetail(item) {
     this.navCtrl.push(JobDetailPage, item)
+  }
+
+  filter() {
+    this.navCtrl.push(JobFilterPage, null);
   }
 }
