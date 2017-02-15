@@ -9,25 +9,29 @@
 
 
 
-
-
 <ion-content padding>
   <ion-grid>
     <ion-row>
       <ion-col>
         <ion-avatar>
-          <img class="companyAvatar" src="{{data?.image}}">
+          <img class="companyAvatar" src="images/avatar.png">
         </ion-avatar>
       </ion-col>
     </ion-row>
 
-    <ion-row class="whiteBackground"> 
+    <ion-row class="whiteBackground">
       <ion-col text-center>
-        
-        <p>Name    : {{data?.title}} {{data?.name}}</p>
-        <p>Contact : {{data?.phone}}</p>
-        <p>Address :{{data?.address}}</p>
+
+        <ion-card>
+          <ion-card-content>
+              <p> {{data?.title}} {{data?.name}}</p>
+              <p> <ion-icon ios="ios-call" md="md-call"></ion-icon>   {{data?.phone}}</p>
+              <p> <ion-icon ios="ios-pin" md="md-pin"></ion-icon>   {{data?.address}}</p>
+          </ion-card-content>
+        </ion-card>
+
       </ion-col>
+
     </ion-row>
 
   </ion-grid>

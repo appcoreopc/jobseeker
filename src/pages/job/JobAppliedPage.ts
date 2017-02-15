@@ -16,6 +16,7 @@ export class JobAppliedPage {
     let loadingUI = this.loader.create({ content: 'Please wait ....' });
     loadingUI.present();
     this.feedService.getFeed().then(data => {
+      
       this.data = data.applied;
       loadingUI.dismiss();
     });
