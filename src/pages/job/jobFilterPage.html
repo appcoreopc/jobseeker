@@ -4,37 +4,46 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>
-      Appointments</ion-title>
+      Filter</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
   <ion-item>
     <h1>
-      <ion-icon name="md-calendar"></ion-icon> {{monthString}}, {{dayString}} </h1>
+      <ion-icon name="md-search"></ion-icon>Filter by </h1>
   </ion-item>
 
-  <ion-card *ngFor="let item of data">
+  <ion-card>
+
     <ion-item>
-      <ion-avatar item-left>
-        <img src="{{item.images}}">
-      </ion-avatar>
-      <h2 (click)='loadDetail(item)'>{{item?.name}} for {{item?.positionFor}}</h2>
-
-      <p>
-        <ion-icon name="md-pin"></ion-icon>{{item?.location}}</p>
+      <ion-label>Job Title</ion-label>
+      <ion-select [(ngModel)]="gender" interface="action-sheet">
+        <ion-option *ngFor="let item of selectOptions"> {{item?.title}}</ion-option>
+      </ion-select>
     </ion-item>
-    <ion-card-content>
 
-      <button ion-button color="secondary">Secondary</button>
-      <button ion-button color="secondary">Secondary</button>
-      <button ion-button color="secondary">Secondary</button>
-      <button ion-button color="secondary">Secondary</button>
-      <button ion-button color="secondary">Secondary</button>
+    <ion-item>
+      <ion-label>Salary Range</ion-label>
+      <ion-select [(ngModel)]="gender" interface="action-sheet">
+        <ion-option *ngFor="let item of salaryRange"> {{item?.title}}</ion-option>
+      </ion-select>
+    </ion-item>
 
-    </ion-card-content>
     <ion-row>
       <ion-col>
+        <ion-card-content>
+          <button ion-button color="secondary">Senior</button>
+          <button ion-button color="secondary">Part Time</button>
+          <button ion-button color="secondary">Flexible Hours</button>
+          <button ion-button color="secondary">ios</button>
+          <button ion-button color="secondary">Android</button>
+        </ion-card-content>
+
+        <ion-card-content>
+          <button ion-button (click)="applyFilter()" color="secondary">Apply Filter</button>
+        </ion-card-content>
+
       </ion-col>
     </ion-row>
   </ion-card>

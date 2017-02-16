@@ -9,12 +9,14 @@ import { JobFeedService } from '../../providers/job-feed-service'
 })
 
 export class JobFilterPage {
-
   data: any;
   cacheData: any;
 
-  monthString: string; 
-  dayString : string; 
+  monthString: string;
+  dayString: string;
+
+  selectOptions: any;
+  salaryRange: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private jobService: JobFeedService,
     private loader: LoadingController) {
@@ -22,6 +24,30 @@ export class JobFilterPage {
     var currentDate = this.getDateObject();
     this.monthString = currentDate.monthName;
     this.dayString = currentDate.day;
+
+    this.selectOptions = [
+      {
+        title: 'Software Developer'
+      },
+      {
+        title: 'UX Developer'
+      }, {
+        title: 'Project Manager'
+      }
+    ];
+
+
+    this.salaryRange = [
+      {
+        title: '100k-120k'
+      },
+      {
+        title: '80k-90k'
+      }, {
+        title: '50k-70k'
+      }
+    ];
+
 
     let loadingUI = this.loader.create({ content: 'Please wait ...' });
     loadingUI.present();
@@ -77,5 +103,9 @@ export class JobFilterPage {
         return (item.name.toLowerCase().indexOf(val.toLowerCase()) > -1);
       })
     }
+  }
+
+  applyFilter() {
+    this.navCtrl.pop();
   }
 }
